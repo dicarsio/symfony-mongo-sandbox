@@ -1,0 +1,9 @@
+Car:
+  connection: mondongo
+  collection: car
+  fields:
+    make:             { type: string, required: true }
+    model:            { type: string, required: false }
+  behaviors:
+    - { class: Mondongo\Behavior\Timestampable }
+    - { class: Mondongo\Behavior\Sluggable, options: { from_field: model } }
